@@ -16,7 +16,7 @@ $app->get("/propiedades", function() use($db, $app) {
 
 	$result = array("status" => "success",
 		"data" => $propiedades);
-	echo $result;
+	echo print_r($result);
 	echo json_encode($result);
 });
 
