@@ -8,7 +8,7 @@ $db = new mysqli("mysql5022.site4now.net", "a463c2_tupunto", "tupunto123", "db_a
 
 $app->get("/propiedades", function() use($db, $app) {
 	// sleep(3);
-	$query = $db->query("SELECT * FROM propiedades ORDER BY propiedad_id DESC;");
+	$query = $db->query("SELECT * FROM propiedades WHERE enabled = 1 ORDER BY propiedad_id DESC;");
 	$propiedades = array();
 	while ($fila = $query->fetch_assoc()) {
 		$propiedades[] = $fila;
@@ -16,7 +16,7 @@ $app->get("/propiedades", function() use($db, $app) {
 
 	$result = array("status" => "success",
 		"data" => $propiedades);
-	echo print_r($result);
+
 	echo json_encode($result);
 });
 
