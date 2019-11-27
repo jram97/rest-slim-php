@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-$db = new mysqli("mysql://mysql5022.site4now.net/", "a463c2_tupunto", "tupunto123", "db_a463c2_tupunto");
+$db = new mysqli("mysql5022.site4now.net", "a463c2_tupunto", "tupunto123", "db_a463c2_tupunto");
 
 $app->get("/propiedades", function() use($db, $app) {
 	// sleep(3);
